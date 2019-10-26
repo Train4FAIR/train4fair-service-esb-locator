@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+# SD  ***************************************************************************************
+  servicediscovery: 
+    image: jbjares/node-service-discovery:v10
+    ports:
+    - 8881:8881
+    command: bash  -c "cd /app/trainmodellingtool-servicediscovery && mvn install -DskipTests && mvn spring-boot:run -Dserver.address=0.0.0.0 -Dserver.port=8881"
+
+    
+    
+    
+    
+    
