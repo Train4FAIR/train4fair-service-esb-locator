@@ -17,7 +17,10 @@ echo app_env $app_env
 echo load_db $load_db
 echo '========================================'
 
-cd /app/train-microservices-esb
+
+#mongod --bind_ip_all --ipv6 --port $mongo_port
+
+cd /app/service-locator-app/pht-envsupport-servicelocator
 mvn install -DskipTests
 mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=$server_port,--server.address=$server_address,--mongo.host=$mongo_host,--mongo.port=$mongo_port,--app.env=$app_env,--load.db=$load_db
 

@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+# APP  ***************************************************************************************
+  sd: 
+    image: jbjares/train-platform-service-locator:v2
+    environment:
+    - user_name=jbjares
+    - server_port=8881
+    - server_address=127.0.0.1
+    - mongo_host=127.0.0.1
+    - mongo_port=27018
+    - app_env=dev
+    - load_db=true
+    ports:
+    - 8881:8881
+    links:
+    - mongosd
+    depends_on:
+    - mongosd
+    volumes:
+     - "/app/service-locator-docker/:/app/service-locator-docker/"
+
+    command: ["/app/service-locator-docker/wait-for-it.sh", "${mongo_host}:${mongo_port}","--timeout=60","--","/app/service-locator-docker/entrypoint.sh"]
+    #command: bash -c "cd /app/service-locator-app/pht-envsupport-servicelocator && chmod 777 -R /app/service-locator-app/pht-envsupport-servicelocator"
+    #command: bash -c "cd /app/service-locator-docker"
+    #command: bash -c "/app/service-locator-docker/entrypoint.sh"
+    ##command: bash -c "cd /app/train-microservices-esb && mvn install -DskipTests && mvn spring-boot:run -Dserver.address=0.0.0.0 -Dserver.port=9091"
+
+# DB  ***************************************************************************************
+  mongosd:
+    image: jbjares/mongo_java8_maven:v1
+    environment:
+      - MONGO_DATA_DIR=/app/service-locator-data/db
+      - MONGO_LOG_DIR=/app/service-locator-data/db.log
+    volumes:
+      - /app/service-locator-data/db:/app/service-locator-data/db
+    ports:
+        - ${mongo_port}:${mongo_port}
+    command: --bind_ip_all --port ${mongo_port} --ipv6 
+    
+    #docker run -d -p 27018:27018 jbjares/mongo_java8_maven:v1 mongod --bind_ip_all --ipv6 --port 28018

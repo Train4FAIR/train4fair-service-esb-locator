@@ -1,7 +1,7 @@
 server:
   servlet:
     context-path: /ServiceDiscovery
-  #port: 8881
+  port: 8881
   #address: cloud41.dbis.rwth-aachen.de
-  #address: 127.0.0.1
+  address: 127.0.0.1
   #address: 0.0.0.0
