@@ -3,7 +3,7 @@ version: '3.7'
 services:
 # APP  ***************************************************************************************
   sd: 
-    image: jbjares/train-platform-service-locator:v2
+    image: jbjares/train-platform-service-locator:v4
     environment:
     - user_name=jbjares
     - server_port=8881
@@ -13,7 +13,7 @@ services:
     - app_env=dev
     - load_db=true
     ports:
-    - 8881:8881
+    - ${server_port}:8881
     links:
     - mongosd
     depends_on:
@@ -36,7 +36,7 @@ services:
     volumes:
       - /app/service-locator-data/db:/app/service-locator-data/db
     ports:
-        - ${mongo_port}:${mongo_port}
+        - ${mongo_port}:27018
     command: --bind_ip_all --port ${mongo_port} --ipv6 
     
     #docker run -d -p 27018:27018 jbjares/mongo_java8_maven:v1 mongod --bind_ip_all --ipv6 --port 28018
