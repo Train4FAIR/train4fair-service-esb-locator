@@ -22,7 +22,7 @@ echo '========================================'
 
 cd /app/service-locator-app/pht-envsupport-servicelocator
 mvn install -DskipTests
-mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=$server_port,--server.address=$server_address,--spring.data.mongodb.host=$mongo_host,--spring.data.mongodb.port=$mongo_port,--spring.data.mongodb.database=$mongo_db_name,--mongo.host=$mongo_host,--mongo.port=$mongo_port,--app.env=$app_env,--load.db=$load_db
+mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=$server_port,--server.address=$server_address,--mongo.host=$mongo_host,--mongo.port=$mongo_port,--app.env=$app_env,--load.db=$load_db
 
 #cd /app/train-microservices-esb && mvn install -DskipTests && mvn spring-boot:run -Dserver.address=0.0.0.0 -Dserver.port=9091
 #mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=8881,--server.address=127.0.0.1,--mongo.host=127.0.0.1,--mongo.port=27018,--app.env=dev,--load.db=true

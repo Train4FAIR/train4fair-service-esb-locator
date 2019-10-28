@@ -1,24 +1,6 @@
 version: '3'
 
 services:
-
-# DB  ***************************************************************************************
-  mongosd:
-    container_name: train.platform.de
-    image: jbjares/mongo_java8_maven:v1
-    environment:
-      - MONGO_DATA_DIR=/app/service-locator-data/db
-      - MONGO_LOG_DIR=/app/service-locator-data/db.log
-    volumes:
-      - ./data/db:/data/db
-    networks:
-      - sd_container_network
-    ports:
-        - $MONGO_PORT:27018
-    command: --bind_ip_all --port $MONGO_PORT --ipv6 
-    
-    #docker run -d -p 27018:27018 jbjares/mongo_java8_maven:v1 mongod --bind_ip_all --ipv6 --port 28018
-    
 # APP  ***************************************************************************************
   sd: 
     image: jbjares/train-platform-service-locator:${SD_TAG}
@@ -28,7 +10,6 @@ services:
     - server_address=$SERVER_ADDRESS
     - mongo_host=$MONGO_HOST
     - mongo_port=$MONGO_PORT
-    - mongo_db_name=$MONGO_DB
     - app_env=$APP_ENV
     - load_db=$LOAD_DB
     ports:
@@ -39,8 +20,6 @@ services:
     - mongosd
     volumes:
      - "/app/service-locator-docker/:/app/service-locator-docker/"
-    networks:
-     - sd_container_network
 
     command: ["/app/service-locator-docker/wait-for-it.sh", "$MONGO_HOST:$MONGO_PORT","--timeout=60","--","/app/service-locator-docker/entrypoint.sh"]
     #command: bash -c "cd /app/service-locator-app/pht-envsupport-servicelocator && chmod 777 -R /app/service-locator-app/pht-envsupport-servicelocator"
@@ -48,10 +27,16 @@ services:
     #command: bash -c "/app/service-locator-docker/entrypoint.sh"
     ##command: bash -c "cd /app/train-microservices-esb && mvn install -DskipTests && mvn spring-boot:run -Dserver.address=0.0.0.0 -Dserver.port=9091"
 
-networks:
-    sd_container_network:
-        # use the bridge driver, but enable IPv6
-        driver: bridge
-        driver_opts:
-            com.docker.network.enable_ipv6: "true"
-  
+# DB  ***************************************************************************************
+  mongosd:
+    image: jbjares/mongo_java8_maven:v1
+    environment:
+      - MONGO_DATA_DIR=/app/service-locator-data/db
+      - MONGO_LOG_DIR=/app/service-locator-data/db.log
+    volumes:
+      - /app/service-locator-data/db:/app/service-locator-data/db
+    ports:
+        - $MONGO_PORT:27018
+    command: --bind_ip_all --port $MONGO_PORT --ipv6 
+    
+    #docker run -d -p 27018:27018 jbjares/mongo_java8_maven:v1 mongod --bind_ip_all --ipv6 --port 28018

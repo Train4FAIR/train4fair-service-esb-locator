@@ -45,7 +45,7 @@ import de.fraunhofer.fit.train.persistence.IEnvironmentPropertiesRepository;
 @ComponentScan({"de.fraunhofer.fit.train"})
 @EntityScan("de.fraunhofer.fit.train")
 @SpringBootApplication
-public class ServiceFacadeTest {
+public class LoadDBLocalTest {
 	
 	
 	@Autowired IEnvironmentPropertiesRepository repository;
@@ -84,23 +84,21 @@ public class ServiceFacadeTest {
 		dev.setMongoMicroservicesPropertiesDEVModel(mongoMicroservicesPropertiesDEVModel);
 	
 		TrainModellingToolPropertiesDEVModel trainModellingToolPropertiesDEVModel = new TrainModellingToolPropertiesDEVModel();
-		trainModellingToolPropertiesDEVModel.setHost("cloud41.dbis.rwth-aachen.de");
+		trainModellingToolPropertiesDEVModel.setHost("127.0.0.1");
 		trainModellingToolPropertiesDEVModel.setPort("1880");
 		trainModellingToolPropertiesDEVModel.setUser("admin");
 		trainModellingToolPropertiesDEVModel.setPass("21232f297a57a5a743894a0e4a801fc3");
 		dev.setTrainModellingToolPropertiesDEVModel(trainModellingToolPropertiesDEVModel);
 		
-		
-		
 		TrainNodesPropertiesDEVModel trainNodesPropertiesDEVModel = new TrainNodesPropertiesDEVModel();
-		trainNodesPropertiesDEVModel.setHost("cloud41.dbis.rwth-aachen.de");
+		trainNodesPropertiesDEVModel.setHost("127.0.0.1");
 		trainNodesPropertiesDEVModel.setPort("1880");
 		trainNodesPropertiesDEVModel.setUser("admin");
 		trainNodesPropertiesDEVModel.setPass("21232f297a57a5a743894a0e4a801fc3");
 		dev.setTrainNodesPropertiesDEVModel(trainNodesPropertiesDEVModel);
 		
 		WebdavMicroServicesPropertiesDEVModel webdavMicroServicesPropertiesDEVModel = new WebdavMicroServicesPropertiesDEVModel();
-		webdavMicroServicesPropertiesDEVModel.setHost("cloud41.dbis.rwth-aachen.de");
+		webdavMicroServicesPropertiesDEVModel.setHost("127.0.0.1");
 		webdavMicroServicesPropertiesDEVModel.setPort("9999");
 		webdavMicroServicesPropertiesDEVModel.setUser("admin");
 		webdavMicroServicesPropertiesDEVModel.setPass("21232f297a57a5a743894a0e4a801fc3");
@@ -151,7 +149,7 @@ public class ServiceFacadeTest {
 		TESTenvironmentProperties test = new TESTenvironmentProperties();
 		test.setEnv("TEST");
 		MicroservicesPropertiesTESTModel microservicesPropertiesTESTModel = new MicroservicesPropertiesTESTModel();
-		microservicesPropertiesTESTModel.setHost("cloud41.dbis.rwth-aachen.de");
+		microservicesPropertiesTESTModel.setHost("127.0.0.1");
 		microservicesPropertiesTESTModel.setPort("9091");
 		microservicesPropertiesTESTModel.setUser("admin");
 		microservicesPropertiesTESTModel.setPass("21232f297a57a5a743894a0e4a801fc3");
