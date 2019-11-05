@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+
+# DB  ***************************************************************************************
+  mongo_train:
+    container_name: ${CONTAINER_NAME}
+    image: jbjares/mongo_java8_maven:${DB_TAG}
+    environment:
+      - MONGO_DATA_DIR=/app/data/db
+      - MONGO_LOG_DIR=/app/data/db.log
+    volumes:
+      #- ./data/db:/data/db
+      - ./mongo/${DB_ENV_FILE_LOC}/data/db:/data/db
+    networks:
+      - train_container_network
+    ports:
+        - $MONGO_PORT:27017
+    command: mongod --bind_ip_all --port $MONGO_PORT --ipv6 
+
+  mongo_seed:
+    container_name: mongo_seed
+    environment:
+      - MONGO_DATA_DIR=/app/data/db
+      - MONGO_LOG_DIR=/app/data/db.log
+      - user_name=$USERNAME
+      - mongo_host=$MONGO_HOST
+      - mongo_port=$MONGO_PORT
+      - mongo_db_name=$SD_MONGO_DB
+      - mongo_db_collection=$SD_MONGO_DB_COLLECTION
+      - app_env=$APP_ENV
+      - load_db=$LOAD_DB
+    build: ./mongo
+    networks:
+      - train_container_network
+    depends_on:
+      - mongo_train
+
+networks:
+    train_container_network:
+        # use the bridge driver, but enable IPv6
+        driver: bridge
+        driver_opts:
+            com.docker.network.enable_ipv6: "true"
+  

@@ -34,7 +34,10 @@ import de.fraunhofer.fit.train.model.test.MongoMicroservicesPropertiesTESTModel;
 import de.fraunhofer.fit.train.model.test.TESTenvironmentProperties;
 import de.fraunhofer.fit.train.model.test.TrainModellingToolPropertiesTESTModel;
 import de.fraunhofer.fit.train.model.test.TrainNodesPropertiesTESTModel;
+import de.fraunhofer.fit.train.model.test.WebdavDocumentationPropertiesTESTModel;
+import de.fraunhofer.fit.train.model.test.WebdavMetadataPropertiesTESTModel;
 import de.fraunhofer.fit.train.model.test.WebdavMicroServicesPropertiesTESTModel;
+import de.fraunhofer.fit.train.model.test.WebdavPagePropertiesTESTModel;
 import de.fraunhofer.fit.train.persistence.IEnvironmentPropertiesRepository;
 
 
@@ -149,21 +152,21 @@ public class LoadDBLocalTest {
 		TESTenvironmentProperties test = new TESTenvironmentProperties();
 		test.setEnv("TEST");
 		MicroservicesPropertiesTESTModel microservicesPropertiesTESTModel = new MicroservicesPropertiesTESTModel();
-		microservicesPropertiesTESTModel.setHost("127.0.0.1");
-		microservicesPropertiesTESTModel.setPort("9091");
+		microservicesPropertiesTESTModel.setHost("train.platform.de");
+		microservicesPropertiesTESTModel.setPort("8080");
 		microservicesPropertiesTESTModel.setUser("admin");
 		microservicesPropertiesTESTModel.setPass("21232f297a57a5a743894a0e4a801fc3");
 		test.setMicroservicesPropertiesTESTModel(microservicesPropertiesTESTModel);
 				
 		MongoMicroservicesPropertiesTESTModel mongoMicroservicesPropertiesTESTModel = new MongoMicroservicesPropertiesTESTModel();
-		mongoMicroservicesPropertiesTESTModel.setHost("127.0.0.1");
+		mongoMicroservicesPropertiesTESTModel.setHost("train.platform.de");
 		mongoMicroservicesPropertiesTESTModel.setPort("27017");
 		mongoMicroservicesPropertiesTESTModel.setUser("admin");
 		mongoMicroservicesPropertiesTESTModel.setPass("21232f297a57a5a743894a0e4a801fc3");
 		test.setMongoMicroservicesPropertiesTESTModel(mongoMicroservicesPropertiesTESTModel);
 	
 		TrainModellingToolPropertiesTESTModel trainModellingToolPropertiesTESTModel = new TrainModellingToolPropertiesTESTModel();
-		trainModellingToolPropertiesTESTModel.setHost("127.0.0.1");
+		trainModellingToolPropertiesTESTModel.setHost("train.platform.de");
 		trainModellingToolPropertiesTESTModel.setPort("1880");
 		trainModellingToolPropertiesTESTModel.setUser("admin");
 		trainModellingToolPropertiesTESTModel.setPass("21232f297a57a5a743894a0e4a801fc3");
@@ -171,18 +174,41 @@ public class LoadDBLocalTest {
 		
 		
 		TrainNodesPropertiesTESTModel trainNodesPropertiesTESTModel = new TrainNodesPropertiesTESTModel();
-		trainNodesPropertiesTESTModel.setHost("127.0.0.1");
+		trainNodesPropertiesTESTModel.setHost("train.platform.de");
 		trainNodesPropertiesTESTModel.setPort("1880");
 		trainNodesPropertiesTESTModel.setUser("admin");
 		trainNodesPropertiesTESTModel.setPass("21232f297a57a5a743894a0e4a801fc3");
 		test.setTrainNodesPropertiesTESTModel(trainNodesPropertiesTESTModel);
 		
 		WebdavMicroServicesPropertiesTESTModel webdavMicroServicesPropertiesTESTModel = new WebdavMicroServicesPropertiesTESTModel();
-		webdavMicroServicesPropertiesTESTModel.setHost("127.0.0.1");
+		webdavMicroServicesPropertiesTESTModel.setHost("167.172.175.112");
 		webdavMicroServicesPropertiesTESTModel.setPort("9999");
 		webdavMicroServicesPropertiesTESTModel.setUser("admin");
-		webdavMicroServicesPropertiesTESTModel.setPass("21232f297a57a5a743894a0e4a801fc3");
+		webdavMicroServicesPropertiesTESTModel.setPass("admin");
 		test.setWebdavMicroServicesPropertiesTESTModel(webdavMicroServicesPropertiesTESTModel);
+		
+		WebdavMetadataPropertiesTESTModel webdavMetadataPropertiesTESTModel = new WebdavMetadataPropertiesTESTModel();
+		webdavMetadataPropertiesTESTModel.setHost("167.172.175.112");
+		webdavMetadataPropertiesTESTModel.setPort("9999");
+		webdavMetadataPropertiesTESTModel.setUser("admin");
+		webdavMetadataPropertiesTESTModel.setPass("admin");
+		test.setWebdavMetadataPropertiesTESTModel(webdavMetadataPropertiesTESTModel);
+		
+		WebdavDocumentationPropertiesTESTModel webdavDocumentationPropertiesTESTModel = new WebdavDocumentationPropertiesTESTModel();
+		webdavDocumentationPropertiesTESTModel.setHost("167.172.175.112");
+		webdavDocumentationPropertiesTESTModel.setPort("9997");
+		webdavDocumentationPropertiesTESTModel.setUser("admin");
+		webdavDocumentationPropertiesTESTModel.setPass("admin");
+		test.setWebdavDocumentationPropertiesTESTModel(webdavDocumentationPropertiesTESTModel);
+		
+		WebdavPagePropertiesTESTModel webdavPagePropertiesTESTModel = new WebdavPagePropertiesTESTModel();
+		webdavPagePropertiesTESTModel.setHost("167.172.175.112");
+		webdavPagePropertiesTESTModel.setPort("9998");
+		webdavPagePropertiesTESTModel.setUser("admin");
+		webdavPagePropertiesTESTModel.setPass("admin");
+		test.setWebdavPagePropertiesTESTModel(webdavPagePropertiesTESTModel);
+		//test.setWebdavMicroServicesPropertiesTESTModel(webdavMicroServicesPropertiesTESTModel);
+		
 		evprops.setTESTenvironmentProperties(test);
 
 		return evprops;

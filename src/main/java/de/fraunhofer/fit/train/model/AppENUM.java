@@ -2,7 +2,15 @@ package de.fraunhofer.fit.train.model;
 
 public enum AppENUM {
 	
-	MS("MS"), MONGO_MS("MONGO_MS"), TMT("TMT"),NODES("NODES"),WEBDAV("WEBDAV"),DATACITE("DATACITE"); ; 
+	MS("MS"), 
+	MONGO_MS("MONGO_MS"), 
+	TMT("TMT"),
+	NODES("NODES"),
+	WEBDAV("WEBDAV"),
+	WEBDAV_DOC("WEBDAV_DOC"),
+	WEBDAV_METADATA("WEBDAV_METADATA"),
+	WEBDAV_PAGE("WEBDAV_PAGE"),
+	DATACITE("DATACITE"); ; 
 	private String text;
 
 	AppENUM(String text) {

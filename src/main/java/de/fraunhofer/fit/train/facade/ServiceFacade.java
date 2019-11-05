@@ -103,6 +103,24 @@ public class ServiceFacade {
 				return envObj;
 			}
 			
+			if(EnvENUM.TEST.toString().toLowerCase().equals(env.toLowerCase()) && AppENUM.WEBDAV_DOC.toString().toLowerCase().equals(type.toLowerCase())) {
+				EnvironmentProperties environmentProperties = it.next();
+				envObj = environmentProperties.getTESTenvironmentProperties().getWebdavMicroServicesPropertiesTESTModel();
+				return envObj;
+			}
+			
+			if(EnvENUM.TEST.toString().toLowerCase().equals(env.toLowerCase()) && AppENUM.WEBDAV_METADATA.toString().toLowerCase().equals(type.toLowerCase())) {
+				EnvironmentProperties environmentProperties = it.next();
+				envObj = environmentProperties.getTESTenvironmentProperties().getWebdavMicroServicesPropertiesTESTModel();
+				return envObj;
+			}
+			
+			if(EnvENUM.TEST.toString().toLowerCase().equals(env.toLowerCase()) && AppENUM.WEBDAV_PAGE.toString().toLowerCase().equals(type.toLowerCase())) {
+				EnvironmentProperties environmentProperties = it.next();
+				envObj = environmentProperties.getTESTenvironmentProperties().getWebdavMicroServicesPropertiesTESTModel();
+				return envObj;
+			}
+			
 			
 			//prod
 			

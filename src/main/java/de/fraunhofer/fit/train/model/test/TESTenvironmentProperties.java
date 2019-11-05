@@ -45,6 +45,18 @@ public class TESTenvironmentProperties {
 	@SerializedName("webdavMicroServicesPropertiesTESTModel")
 	@Expose
 	private WebdavMicroServicesPropertiesTESTModel webdavMicroServicesPropertiesTESTModel;
+	
+	@SerializedName("webdavDocPropertiesTESTModel")
+	@Expose
+	private WebdavDocumentationPropertiesTESTModel webdavDocumentationPropertiesTESTModel;
+	
+	@SerializedName("webdavMetadataPropertiesTESTModel")
+	@Expose
+	private WebdavMetadataPropertiesTESTModel webdavMetadataPropertiesTESTModel;
+	
+	@SerializedName("webdavPagePropertiesTESTModel")
+	@Expose
+	private WebdavPagePropertiesTESTModel webdavPagePropertiesTESTModel;
 
 	public String getEnv() {
 		return env;
@@ -95,6 +107,31 @@ public class TESTenvironmentProperties {
 	public void setWebdavMicroServicesPropertiesTESTModel(
 			WebdavMicroServicesPropertiesTESTModel webdavMicroServicesPropertiesTESTModel) {
 		this.webdavMicroServicesPropertiesTESTModel = webdavMicroServicesPropertiesTESTModel;
+	}
+
+	public WebdavDocumentationPropertiesTESTModel getWebdavDocumentationPropertiesTESTModel() {
+		return webdavDocumentationPropertiesTESTModel;
+	}
+
+	public void setWebdavDocumentationPropertiesTESTModel(
+			WebdavDocumentationPropertiesTESTModel webdavDocumentationPropertiesTESTModel) {
+		this.webdavDocumentationPropertiesTESTModel = webdavDocumentationPropertiesTESTModel;
+	}
+
+	public WebdavMetadataPropertiesTESTModel getWebdavMetadataPropertiesTESTModel() {
+		return webdavMetadataPropertiesTESTModel;
+	}
+
+	public void setWebdavMetadataPropertiesTESTModel(WebdavMetadataPropertiesTESTModel webdavMetadataPropertiesTESTModel) {
+		this.webdavMetadataPropertiesTESTModel = webdavMetadataPropertiesTESTModel;
+	}
+
+	public WebdavPagePropertiesTESTModel getWebdavPagePropertiesTESTModel() {
+		return webdavPagePropertiesTESTModel;
+	}
+
+	public void setWebdavPagePropertiesTESTModel(WebdavPagePropertiesTESTModel webdavPagePropertiesTESTModel) {
+		this.webdavPagePropertiesTESTModel = webdavPagePropertiesTESTModel;
 	}
 	
 	

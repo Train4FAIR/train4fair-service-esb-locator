@@ -18,7 +18,7 @@ import com.mongodb.MongoClient;
 public class AppConfig extends AbstractMongoConfiguration {
 	
 	  @Autowired
-	  private Environment env;
+	  Environment env;
 
 	  @Override
 	  protected String getDatabaseName() {

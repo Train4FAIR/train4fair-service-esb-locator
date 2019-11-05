@@ -36,11 +36,8 @@ public class SDInterfaces {
 		return envObj;
 	}
 	
-	@PostMapping(value = "/train/service/discovery/{env}/{type}/{token}", produces = MediaType.APPLICATION_JSON_VALUE)
-	List<EnvironmentProperties> findAll(@PathVariable String env, @PathVariable String type, @PathVariable String token) throws Exception {
-		if(!"admin".equals(token)) {
-			throw new RuntimeException("Invalid Token!");
-		}
+	@PostMapping(value = "/train/service/discovery/", produces = MediaType.APPLICATION_JSON_VALUE)
+	List<EnvironmentProperties> findAll() throws Exception {
 		return facade.findAll();
 	}
 

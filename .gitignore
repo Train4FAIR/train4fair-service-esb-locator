@@ -1,1 +1,7 @@
 /target/
+private.properties
+*private.properties
+*/private.properties
+**/private.properties
+.classpath
+.project
