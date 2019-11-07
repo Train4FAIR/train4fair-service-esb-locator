@@ -47,7 +47,7 @@ if ([ $1 = "--init" ] && [ $2 = true ]); then
 	#sshpass -p $MENZEL_PASS  scp setup.tar.gz installation.tar.gz $MENZEL_USER@$MENZEL_URL:/webdav/documentation/data/installation/development
 	#sshpass -p $CLOUD41_PASS scp setup.tar.gz installation.tar.gz $CLOUD41_USER@$CLOUD41_URL:/webdav/documentation/data/installation/development
 	sshpass -p $DIG_OCEAN_DAV_PASS scp setup.tar.gz installation.tar.gz $DIG_OCEAN_DAV_USER@$DIG_OCEAN_DAV_HOST:/webdav/documentation/data/installation/development
-	
+	#scp ~/workspaces/inbraMarketingCode/venv/pub/Train4FAIR_logo1.png root@167.172.175.112:/webdav/documentation/data/media/static/files/img/
 	rm setup.tar.gz installation.tar.gz
 fi
 
