@@ -45,6 +45,8 @@ echo 'SETUP_MODE_INIT_DAV_VALUE: '$SETUP_MODE_INIT_DAV_VALUE
 
 if ([ $1 = "--init" ] && [ $2 = true ]); then
 
+	#wget --user=gofair --password=gofair  http://167.172.175.112:9997/installation/development/setup.tar.gz
+	cd ..
 	wget --user=$DAV_DOC_USERNAME --password=$DAV_DOC_PASSWD  $DAV_DOC_URL$DAV_DOC_INSTALL_CONTENT_NAME.tar.gz
 	tar xvfz $DAV_DOC_INSTALL_CONTENT_NAME.tar.gz
 	cd $DAV_DOC_INSTALL_CONTENT_NAME

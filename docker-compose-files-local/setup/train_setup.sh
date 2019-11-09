@@ -38,7 +38,7 @@ fi
 
 echo "Components Train SD and ESB are setting up..."
 echo "docker-compose loading..."
-sudo docker-compose up -d 
+sudo docker-compose up -d
 echo "docker-compose finished."
 echo "Components Train SD and ESB are set up!"
 

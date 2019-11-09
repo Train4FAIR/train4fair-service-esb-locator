@@ -10,8 +10,8 @@ services:
       - "9999:80"
     environment:
       AUTH_TYPE: Digest
-      USERNAME: 'f1traindav'
-      PASSWORD: '|f1traindav@metadata|'
+      USERNAME: gofair
+      PASSWORD: gofair
     volumes:
       - /webdav/metadata:/var/lib/dav
         
@@ -23,8 +23,8 @@ services:
       - "9998:80"
     environment:
       AUTH_TYPE: Digest
-      USERNAME: 'f1traindav'
-      PASSWORD: '|f1traindav@pages|'
+      USERNAME: gofair
+      PASSWORD: gofair
     volumes:
       - /webdav/landingpage:/var/lib/dav
     links:
@@ -40,8 +40,8 @@ services:
       - "9997:80"
     environment:
       AUTH_TYPE: Digest
-      USERNAME: 'f1traindav'
-      PASSWORD: '|f1traindav@docs|'
+      USERNAME: gofair
+      PASSWORD: gofair
     volumes:
       - /webdav/documentation:/var/lib/dav
     links:

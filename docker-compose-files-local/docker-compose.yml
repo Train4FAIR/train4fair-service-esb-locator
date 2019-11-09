@@ -86,6 +86,15 @@ services:
     - env_dav_name=$APP_ENV
     - env_dav_type=$ENV_DAV_TYPE
     - env_dav_token=$ENV_DAV_TOKEN
+    - env_dav_metadata_name=$APP_ENV
+    - env_dav_metadata_type=$ENV_DAV_METADATA_TYPE
+    - env_dav_metadata_token=$ENV_DAV_METADATA_TOKEN
+    - env_dav_doc_name=$APP_ENV
+    - env_dav_doc_type=$ENV_DAV_DOC_TYPE
+    - env_dav_doc_token=$ENV_DAV_DOC_TOKEN
+    - env_dav_page_name=$APP_ENV
+    - env_dav_page_type=$ENV_DAV_PAGE_TYPE
+    - env_dav_page_token=$ENV_DAV_PAGE_TOKEN
     - srv_loc_protocol=$SRV_LOC_PROTOCOL
     - srv_loc_host=$SRV_LOC_HOST
     - srv_loc_port=$SRV_LOC_PORT

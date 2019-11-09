@@ -34,7 +34,10 @@ import de.fraunhofer.fit.train.model.test.MongoMicroservicesPropertiesTESTModel;
 import de.fraunhofer.fit.train.model.test.TESTenvironmentProperties;
 import de.fraunhofer.fit.train.model.test.TrainModellingToolPropertiesTESTModel;
 import de.fraunhofer.fit.train.model.test.TrainNodesPropertiesTESTModel;
+import de.fraunhofer.fit.train.model.test.WebdavDocumentationPropertiesTESTModel;
+import de.fraunhofer.fit.train.model.test.WebdavMetadataPropertiesTESTModel;
 import de.fraunhofer.fit.train.model.test.WebdavMicroServicesPropertiesTESTModel;
+import de.fraunhofer.fit.train.model.test.WebdavPagePropertiesTESTModel;
 import de.fraunhofer.fit.train.persistence.IEnvironmentPropertiesRepository;
 
 
@@ -84,21 +87,21 @@ public class LoadDBCloud41Test {
 		dev.setMongoMicroservicesPropertiesDEVModel(mongoMicroservicesPropertiesDEVModel);
 	
 		TrainModellingToolPropertiesDEVModel trainModellingToolPropertiesDEVModel = new TrainModellingToolPropertiesDEVModel();
-		trainModellingToolPropertiesDEVModel.setHost("cloud41.dbis.rwth-aachen.de");
+		trainModellingToolPropertiesDEVModel.setHost("127.0.0.1");
 		trainModellingToolPropertiesDEVModel.setPort("1880");
 		trainModellingToolPropertiesDEVModel.setUser("admin");
 		trainModellingToolPropertiesDEVModel.setPass("21232f297a57a5a743894a0e4a801fc3");
 		dev.setTrainModellingToolPropertiesDEVModel(trainModellingToolPropertiesDEVModel);
 		
 		TrainNodesPropertiesDEVModel trainNodesPropertiesDEVModel = new TrainNodesPropertiesDEVModel();
-		trainNodesPropertiesDEVModel.setHost("cloud41.dbis.rwth-aachen.de");
+		trainNodesPropertiesDEVModel.setHost("127.0.0.1");
 		trainNodesPropertiesDEVModel.setPort("1880");
 		trainNodesPropertiesDEVModel.setUser("admin");
 		trainNodesPropertiesDEVModel.setPass("21232f297a57a5a743894a0e4a801fc3");
 		dev.setTrainNodesPropertiesDEVModel(trainNodesPropertiesDEVModel);
 		
 		WebdavMicroServicesPropertiesDEVModel webdavMicroServicesPropertiesDEVModel = new WebdavMicroServicesPropertiesDEVModel();
-		webdavMicroServicesPropertiesDEVModel.setHost("cloud41.dbis.rwth-aachen.de");
+		webdavMicroServicesPropertiesDEVModel.setHost("127.0.0.1");
 		webdavMicroServicesPropertiesDEVModel.setPort("9999");
 		webdavMicroServicesPropertiesDEVModel.setUser("admin");
 		webdavMicroServicesPropertiesDEVModel.setPass("21232f297a57a5a743894a0e4a801fc3");
@@ -109,21 +112,21 @@ public class LoadDBCloud41Test {
 		PRODenvironmentProperties prod = new PRODenvironmentProperties();
 		prod.setEnv("PROD");
 		MicroservicesPropertiesPRODModel microservicesPropertiesPRODModel = new MicroservicesPropertiesPRODModel();
-		microservicesPropertiesPRODModel.setHost("cloud41.dbis.rwth-aachen.de");
+		microservicesPropertiesPRODModel.setHost("127.0.0.1");
 		microservicesPropertiesPRODModel.setPort("9091");
 		microservicesPropertiesPRODModel.setUser("admin");
 		microservicesPropertiesPRODModel.setPass("21232f297a57a5a743894a0e4a801fc3");
 		prod.setMicroservicesPropertiesPRODModel(microservicesPropertiesPRODModel);
 				
 		MongoMicroservicesPropertiesPRODModel mongoMicroservicesPropertiesPRODModel = new MongoMicroservicesPropertiesPRODModel();
-		mongoMicroservicesPropertiesPRODModel.setHost("cloud41.dbis.rwth-aachen.de");
+		mongoMicroservicesPropertiesPRODModel.setHost("127.0.0.1");
 		mongoMicroservicesPropertiesPRODModel.setPort("27017");
 		mongoMicroservicesPropertiesPRODModel.setUser("admin");
 		mongoMicroservicesPropertiesPRODModel.setPass("21232f297a57a5a743894a0e4a801fc3");
 		prod.setMongoMicroservicesPropertiesPRODModel(mongoMicroservicesPropertiesPRODModel);
 	
 		TrainModellingToolPropertiesPRODModel trainModellingToolPropertiesPRODModel = new TrainModellingToolPropertiesPRODModel();
-		trainModellingToolPropertiesPRODModel.setHost("cloud41.dbis.rwth-aachen.de");
+		trainModellingToolPropertiesPRODModel.setHost("127.0.0.1");
 		trainModellingToolPropertiesPRODModel.setPort("1880");
 		trainModellingToolPropertiesPRODModel.setUser("admin");
 		trainModellingToolPropertiesPRODModel.setPass("21232f297a57a5a743894a0e4a801fc3");
@@ -131,14 +134,14 @@ public class LoadDBCloud41Test {
 		
 		
 		TrainNodesPropertiesPRODModel trainNodesPropertiesPRODModel = new TrainNodesPropertiesPRODModel();
-		trainNodesPropertiesPRODModel.setHost("cloud41.dbis.rwth-aachen.de");
+		trainNodesPropertiesPRODModel.setHost("127.0.0.1");
 		trainNodesPropertiesPRODModel.setPort("1880");
 		trainNodesPropertiesPRODModel.setUser("admin");
 		trainNodesPropertiesPRODModel.setPass("21232f297a57a5a743894a0e4a801fc3");
 		prod.setTrainNodesPropertiesPRODModel(trainNodesPropertiesPRODModel);
 		
 		WebdavMicroServicesPropertiesPRODModel webdavMicroServicesPropertiesPRODModel = new WebdavMicroServicesPropertiesPRODModel();
-		webdavMicroServicesPropertiesPRODModel.setHost("cloud41.dbis.rwth-aachen.de");
+		webdavMicroServicesPropertiesPRODModel.setHost("127.0.0.1");
 		webdavMicroServicesPropertiesPRODModel.setPort("9999");
 		webdavMicroServicesPropertiesPRODModel.setUser("admin");
 		webdavMicroServicesPropertiesPRODModel.setPass("21232f297a57a5a743894a0e4a801fc3");
@@ -163,7 +166,7 @@ public class LoadDBCloud41Test {
 		test.setMongoMicroservicesPropertiesTESTModel(mongoMicroservicesPropertiesTESTModel);
 	
 		TrainModellingToolPropertiesTESTModel trainModellingToolPropertiesTESTModel = new TrainModellingToolPropertiesTESTModel();
-		trainModellingToolPropertiesTESTModel.setHost("cloud41.dbis.rwth-aachen.de");
+		trainModellingToolPropertiesTESTModel.setHost("train.platform.de");
 		trainModellingToolPropertiesTESTModel.setPort("1880");
 		trainModellingToolPropertiesTESTModel.setUser("admin");
 		trainModellingToolPropertiesTESTModel.setPass("21232f297a57a5a743894a0e4a801fc3");
@@ -171,18 +174,41 @@ public class LoadDBCloud41Test {
 		
 		
 		TrainNodesPropertiesTESTModel trainNodesPropertiesTESTModel = new TrainNodesPropertiesTESTModel();
-		trainNodesPropertiesTESTModel.setHost("cloud41.dbis.rwth-aachen.de");
+		trainNodesPropertiesTESTModel.setHost("train.platform.de");
 		trainNodesPropertiesTESTModel.setPort("1880");
 		trainNodesPropertiesTESTModel.setUser("admin");
 		trainNodesPropertiesTESTModel.setPass("21232f297a57a5a743894a0e4a801fc3");
 		test.setTrainNodesPropertiesTESTModel(trainNodesPropertiesTESTModel);
 		
 		WebdavMicroServicesPropertiesTESTModel webdavMicroServicesPropertiesTESTModel = new WebdavMicroServicesPropertiesTESTModel();
-		webdavMicroServicesPropertiesTESTModel.setHost("cloud41.dbis.rwth-aachen.de");
+		webdavMicroServicesPropertiesTESTModel.setHost("167.172.175.112");
 		webdavMicroServicesPropertiesTESTModel.setPort("9999");
-		webdavMicroServicesPropertiesTESTModel.setUser("admin");
-		webdavMicroServicesPropertiesTESTModel.setPass("21232f297a57a5a743894a0e4a801fc3");
+		webdavMicroServicesPropertiesTESTModel.setUser("gofair");
+		webdavMicroServicesPropertiesTESTModel.setPass("gofair");
 		test.setWebdavMicroServicesPropertiesTESTModel(webdavMicroServicesPropertiesTESTModel);
+		
+		WebdavMetadataPropertiesTESTModel webdavMetadataPropertiesTESTModel = new WebdavMetadataPropertiesTESTModel();
+		webdavMetadataPropertiesTESTModel.setHost("167.172.175.112");
+		webdavMetadataPropertiesTESTModel.setPort("9999");
+		webdavMetadataPropertiesTESTModel.setUser("gofair");
+		webdavMetadataPropertiesTESTModel.setPass("gofair");
+		test.setWebdavMetadataPropertiesTESTModel(webdavMetadataPropertiesTESTModel);
+		
+		WebdavDocumentationPropertiesTESTModel webdavDocumentationPropertiesTESTModel = new WebdavDocumentationPropertiesTESTModel();
+		webdavDocumentationPropertiesTESTModel.setHost("167.172.175.112");
+		webdavDocumentationPropertiesTESTModel.setPort("9997");
+		webdavDocumentationPropertiesTESTModel.setUser("gofair");
+		webdavDocumentationPropertiesTESTModel.setPass("gofair");
+		test.setWebdavDocumentationPropertiesTESTModel(webdavDocumentationPropertiesTESTModel);
+		
+		WebdavPagePropertiesTESTModel webdavPagePropertiesTESTModel = new WebdavPagePropertiesTESTModel();
+		webdavPagePropertiesTESTModel.setHost("167.172.175.112");
+		webdavPagePropertiesTESTModel.setPort("9998");
+		webdavPagePropertiesTESTModel.setUser("gofair");
+		webdavPagePropertiesTESTModel.setPass("gofair");
+		test.setWebdavPagePropertiesTESTModel(webdavPagePropertiesTESTModel);
+		//test.setWebdavMicroServicesPropertiesTESTModel(webdavMicroServicesPropertiesTESTModel);
+		
 		evprops.setTESTenvironmentProperties(test);
 
 		return evprops;
