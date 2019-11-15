@@ -3,5 +3,9 @@ private.properties
 *private.properties
 */private.properties
 **/private.properties
+installation.properties
+*installation.properties
+*/installation.properties
+**/installation.properties
 .classpath
 .project
